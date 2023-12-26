@@ -53,7 +53,7 @@ type NoteLabelProps = NoteWithTop & { index: number };
 
 const notesLeft = {
   C: 10,
-  "C#": 15,
+  "C#": 22,
   D: 20,
   "D#": 15,
   E: 86,
@@ -63,11 +63,11 @@ const notesLeft = {
   "G#": 186,
   A: 60,
   "A#": 15,
-  B: 70,
+  B: 244,
 };
 
 function NoteLabel({ note, top, octave, index }: NoteLabelProps) {
-  const left = notesLeft[note];
+  const left = notesLeft[note] + (octave - 1) * 280;
   const calculatedTop = (note.includes("#") ? 0 : 160) + top * 40;
   const bgs = ["bg-amber-300", "bg-orange-400", "bg-sky-400", "bg-violet-400"];
 
@@ -100,13 +100,38 @@ function addTopToNotes(notes: Note[]): NoteWithTop[] {
   });
 }
 
+function getOctaves(notes: Note[]): number[] {
+  const octaves: { [octave: string]: boolean } = {};
+  for (const note of notes) {
+    octaves[note.octave.toString()] = true;
+  }
+
+  const octavesNumber = Object.keys(octaves).map((octave) =>
+    parseInt(octave, 10)
+  );
+
+  const min = Math.min(...octavesNumber);
+  const max = Math.max(...octavesNumber);
+
+  const arrayRange = (start: number, stop: number, step: number) =>
+    Array.from(
+      { length: (stop - start) / step + 1 },
+      (value, index) => start + index * step
+    );
+
+  return arrayRange(min, max, 1);
+}
+
 export function Keyboard({ notes }: { notes: Note[] }) {
   const notesWithTop = addTopToNotes(notes);
+  const octaves = getOctaves(notes);
 
   return (
     <div className="relative">
       <div className="flex">
-        <Octave />
+        {octaves.map((octave, index) => (
+          <Octave key={index} />
+        ))}
 
         {notesWithTop.map((note, index) => (
           <NoteLabel key={index} index={index} {...note} />
