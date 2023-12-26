@@ -34,3 +34,9 @@ Make sure to deploy the output of `npm run build`
 
 - `build/server`
 - `build/client`
+
+## Deploy
+
+```
+flyctl launch
+```
