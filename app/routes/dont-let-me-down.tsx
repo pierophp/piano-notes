@@ -25,7 +25,7 @@ export default function DontLetMeDown() {
   return (
     <div className="p-2">
       <Title>Don't let me down</Title>
-      <div className="p-2 flex gap-10">
+      <div className="p-2 flex gap-20">
         {notesGroups.map((notes, index) => (
           <Keyboard key={index} notes={notes} />
         ))}
