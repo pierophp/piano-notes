@@ -6,7 +6,12 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="p-2">
-      <a href="/dont-let-me-down">Don't let me down</a>
+      <div>
+        <a href="/beatles-dont-let-me-down">Beatles - Don't let me down</a>
+      </div>
+      <div>
+        <a href="/mario-bowser-castle-theme">Mario - Bowser's Castle Theme</a>
+      </div>
     </div>
   );
 }

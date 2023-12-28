@@ -47,34 +47,34 @@ export type Note = {
   octave: number;
 };
 
-type NoteWithTop = Note & { top: number };
+type NoteWithTop = Note & { topIndex: number };
 
 type NoteLabelProps = NoteWithTop & { index: number };
 
 const notesLeft = {
   C: 10,
-  "C#": 22,
+  "C#": 28,
   D: 20,
   "D#": 15,
-  E: 86,
-  F: 40,
-  "F#": 145,
-  G: 50,
-  "G#": 186,
+  E: 88,
+  F: 100,
+  "F#": 149,
+  G: 160,
+  "G#": 189,
   A: 60,
   "A#": 15,
-  B: 244,
+  B: 248,
 };
 
-function NoteLabel({ note, top, octave, index }: NoteLabelProps) {
+function NoteLabel({ note, topIndex, octave, index }: NoteLabelProps) {
   const left = notesLeft[note] + (octave - 1) * 280;
-  const calculatedTop = (note.includes("#") ? 0 : 160) + top * 40;
+  const calculatedTop = (note.includes("#") ? 0 : 161) + topIndex * 26;
   const bgs = ["bg-amber-300", "bg-orange-400", "bg-sky-400", "bg-violet-400"];
 
   const bgIndex = index % bgs.length;
   const bg = bgs[bgIndex];
   let className =
-    "w-8 h-8 bg-amber-300 flex items-center justify-center radius-full absolute ";
+    "w-6 h-6 bg-amber-300 flex items-center justify-center radius-full absolute ";
 
   className += `${bg} `;
 
@@ -96,7 +96,7 @@ function addTopToNotes(notes: Note[]): NoteWithTop[] {
 
     notesUsed[noteKey] += 1;
 
-    return { ...note, top: notesUsed[noteKey] - 1 };
+    return { ...note, topIndex: notesUsed[noteKey] - 1 };
   });
 }
 

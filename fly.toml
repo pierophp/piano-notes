@@ -1,18 +1,13 @@
-# fly.toml app configuration file generated for personal-study on 2023-11-23T14:42:21-03:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
+# fly.toml file generated for piano-notes on 2023-12-26T12:39:05-03:00
 
 app = "piano-notes"
 primary_region = "gru"
 
-[build]
-
 [http_service]
-  internal_port = 3000
-  force_https = true
-  auto_stop_machines = true
   auto_start_machines = true
+  auto_stop_machines = true
+  force_https = true
+  internal_port = 3000
   min_machines_running = 0
   processes = ["app"]
 
