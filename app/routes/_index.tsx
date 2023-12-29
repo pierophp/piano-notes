@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Title } from "~/components/Title";
 export const meta: MetaFunction = () => {
   return [{ title: "Keyboard" }, { name: "description", content: "Keyboard" }];
 };
@@ -6,6 +7,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="p-2">
+      <Title>Piano Notes</Title>
       <div>
         <a href="/beatles-dont-let-me-down">Beatles - Don't let me down</a>
       </div>
