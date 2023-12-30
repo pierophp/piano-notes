@@ -28,6 +28,35 @@ export default function DontLetMeDown() {
       { note: "B", octave: 1 },
       { note: "E", octave: 1 },
     ],
+    [
+      { note: "B", octave: 3 },
+      { note: "C#", octave: 4 },
+      { note: "E", octave: 4 },
+      { note: "C#", octave: 4 },
+      { note: "G#", octave: 3 },
+      { note: "F#", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "F#", octave: 3 },
+      { note: "F#", octave: 1 },
+      { note: "C#", octave: 2 },
+      { note: "F#", octave: 1 },
+    ],
+    [
+      { note: "F#", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "F#", octave: 3 },
+      { note: "F#", octave: 1 },
+      { note: "C#", octave: 2 },
+      { note: "F#", octave: 1 },
+    ],
+    [
+      { note: "F#", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "F#", octave: 1 },
+      { note: "C#", octave: 2 },
+      { note: "F#", octave: 1 },
+    ],
   ];
 
   return (

@@ -69,7 +69,16 @@ const notesLeft = {
 function NoteLabel({ note, topIndex, octave, index }: NoteLabelProps) {
   const left = notesLeft[note] + (octave - 1) * 280;
   const calculatedTop = (note.includes("#") ? 0 : 161) + topIndex * 26;
-  const bgs = ["bg-amber-300", "bg-orange-400", "bg-sky-400", "bg-violet-400"];
+  const bgs = [
+    "bg-amber-300",
+    "bg-orange-400",
+    "bg-sky-400",
+    "bg-violet-400",
+    "bg-green-500",
+    "bg-red-400",
+    "bg-orange-600",
+    "bg-lime-400",
+  ];
 
   const bgIndex = index % bgs.length;
   const bg = bgs[bgIndex];
