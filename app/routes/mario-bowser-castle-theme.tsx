@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import abcjs from "abcjs";
 import { useEffect } from "react";
+import { Reference } from "~/components/Reference";
 import { Title } from "~/components/Title";
 
 const title = "Mario - Bowser's Castle Theme";
@@ -56,38 +57,26 @@ z3 [F,F]|[G,G][F,,F,][G,,G,][F,F]|[G,G][F,,F,][G,,G,][F,,F,]|
   }, [abc]);
 
   return (
-    <div className="p-2">
+    <div>
       <Title>{title}</Title>
       <div id="abc"></div>
       <div>
         <div className="font-bold">References:</div>
         <div>
-          <a
-            href="https://www.youtube.com/watch?v=Bfp-cnhExnE"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <Reference href="https://www.youtube.com/watch?v=Bfp-cnhExnE">
             Video 1
-          </a>
+          </Reference>
         </div>
         <div>
-          <a
-            href="https://www.youtube.com/watch?v=y-RlmjYjpjU"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <Reference href="https://www.youtube.com/watch?v=y-RlmjYjpjU">
             Video 2
-          </a>
+          </Reference>
         </div>
 
         <div>
-          <a
-            href="https://musescore.com/user/32845162/scores/6182106"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <Reference href="https://musescore.com/user/32845162/scores/6182106">
             Musescore
-          </a>
+          </Reference>
         </div>
       </div>
     </div>

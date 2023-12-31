@@ -72,7 +72,7 @@ export default function DontLetMeDown() {
   ];
 
   return (
-    <div className="p-2">
+    <div>
       <Title>{title}</Title>
 
       <div className="p-2 flex gap-x-20 gap-y-5 flex-wrap">
