@@ -26,7 +26,7 @@ export default function DontLetMeDown() {
       { note: "B", octave: 2 },
     ],
     [
-      { note: "G", octave: 1, section: "Vocais (4x)" },
+      { note: "G", octave: 1, section: "Vocal Intro (4x)" },
       { note: "C", octave: 1, index: 1 },
       { note: "E", octave: 1, index: 1 },
       { note: "G", octave: 2, obs: "Imagine all the" },
@@ -41,6 +41,19 @@ export default function DontLetMeDown() {
       { note: "F", octave: 1, index: 1 },
       { note: "B", octave: 2, index: 1, obs: "people" },
       { note: "A", octave: 2 },
+    ],
+    [
+      { note: "A", octave: 1, section: "Vocal Pré-Refrão" },
+      { note: "C", octave: 2, index: 1 },
+      { note: "A", octave: 2, obs: "Imagine all the" },
+      { note: "C", octave: 3 },
+      { note: "A", octave: 2 },
+      { note: "C", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "E", octave: 3 },
+      { note: "E", octave: 1, index: 7 },
+      { note: "A", octave: 1, index: 7 },
+      { note: "D", octave: 3 },
     ],
   ];
 

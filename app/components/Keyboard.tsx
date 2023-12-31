@@ -57,8 +57,8 @@ type NoteLabelProps = NoteCalculated & { index: number };
 const notesLeft = {
   C: 10,
   "C#": 28,
-  D: 20,
-  "D#": 15,
+  D: 46,
+  "D#": 50,
   E: 88,
   F: 128,
   "F#": 149,
