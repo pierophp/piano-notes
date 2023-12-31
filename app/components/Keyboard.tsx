@@ -5,7 +5,7 @@ function WhiteKey() {
 function BlackKey({ left = 0 }: { left: number }) {
   return (
     <div
-      className="border-solid w-8 h-40 border-2 bg-black absolute"
+      className="border-solid w-8 h-28 border-2 bg-black absolute"
       style={{ left }}
     ></div>
   );
@@ -71,7 +71,7 @@ const notesLeft = {
 
 function NoteLabel({ note, topIndex, octave, index, obs }: NoteLabelProps) {
   const left = notesLeft[note] + (octave - 1) * 280;
-  const calculatedTop = (note.includes("#") ? 20 : 181) + topIndex * 26;
+  const calculatedTop = (note.includes("#") ? 20 : 132) + topIndex * 26;
   const bgs = [
     "bg-amber-300",
     "bg-orange-400",
