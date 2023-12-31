@@ -13,7 +13,7 @@ function BlackKey({ left = 0 }: { left: number }) {
 
 function Octave() {
   return (
-    <div className="flex relative">
+    <div className="flex relative pt-4">
       <WhiteKey />
       <BlackKey left={24} />
       <WhiteKey />
@@ -45,11 +45,13 @@ export type Note = {
     | "A#"
     | "B";
   octave: number;
+  index?: number;
+  obs?: string;
 };
 
-type NoteWithTop = Note & { topIndex: number };
+type NoteCalculated = Note & { index: number; topIndex: number };
 
-type NoteLabelProps = NoteWithTop & { index: number };
+type NoteLabelProps = NoteCalculated & { index: number };
 
 const notesLeft = {
   C: 10,
@@ -57,18 +59,18 @@ const notesLeft = {
   D: 20,
   "D#": 15,
   E: 88,
-  F: 100,
+  F: 128,
   "F#": 149,
-  G: 160,
+  G: 167,
   "G#": 189,
-  A: 60,
-  "A#": 15,
+  A: 207,
+  "A#": 228,
   B: 248,
 };
 
-function NoteLabel({ note, topIndex, octave, index }: NoteLabelProps) {
+function NoteLabel({ note, topIndex, octave, index, obs }: NoteLabelProps) {
   const left = notesLeft[note] + (octave - 1) * 280;
-  const calculatedTop = (note.includes("#") ? 0 : 161) + topIndex * 26;
+  const calculatedTop = (note.includes("#") ? 20 : 181) + topIndex * 26;
   const bgs = [
     "bg-amber-300",
     "bg-orange-400",
@@ -80,7 +82,7 @@ function NoteLabel({ note, topIndex, octave, index }: NoteLabelProps) {
     "bg-lime-400",
   ];
 
-  const bgIndex = index % bgs.length;
+  const bgIndex = (index - 1) % bgs.length;
   const bg = bgs[bgIndex];
   let className =
     "w-6 h-6 bg-amber-300 flex items-center justify-center radius-full absolute ";
@@ -88,16 +90,25 @@ function NoteLabel({ note, topIndex, octave, index }: NoteLabelProps) {
   className += `${bg} `;
 
   return (
-    <div className={className} style={{ left, top: calculatedTop }}>
-      {index + 1}
-    </div>
+    <>
+      <div className={className} style={{ left, top: calculatedTop }}>
+        {index}
+      </div>
+
+      {obs && (
+        <div className="absolute text-lg w-40" style={{ left, top: -8 }}>
+          {obs}
+        </div>
+      )}
+    </>
   );
 }
 
-function addTopToNotes(notes: Note[]): NoteWithTop[] {
+function addTopToNotes(notes: Note[]): NoteCalculated[] {
   const notesUsed: { [noteKey: string]: number } = {};
-
+  let index = 0;
   return notes.map((note) => {
+    index++;
     const noteKey = `${note.note}${note.octave}`;
     if (notesUsed[noteKey] === undefined) {
       notesUsed[noteKey] = 0;
@@ -105,7 +116,11 @@ function addTopToNotes(notes: Note[]): NoteWithTop[] {
 
     notesUsed[noteKey] += 1;
 
-    return { ...note, topIndex: notesUsed[noteKey] - 1 };
+    if (note.index !== undefined) {
+      index = note.index;
+    }
+
+    return { ...note, topIndex: notesUsed[noteKey] - 1, index };
   });
 }
 
@@ -143,7 +158,7 @@ export function Keyboard({ notes }: { notes: Note[] }) {
         ))}
 
         {notesWithTop.map((note, index) => (
-          <NoteLabel key={index} index={index} {...note} />
+          <NoteLabel key={`${index}_${note.note}`} {...note} />
         ))}
       </div>
     </div>
