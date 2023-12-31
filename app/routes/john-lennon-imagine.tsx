@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
 export default function DontLetMeDown() {
   const notesGroups: Note[][] = [
     [
-      { note: "G", octave: 1 },
+      { note: "G", octave: 1, section: "Intro (2x)" },
       { note: "E", octave: 1, index: 1 },
       { note: "C", octave: 1, obs: "1+2 3x" },
       { note: "B", octave: 1 },
@@ -26,7 +26,7 @@ export default function DontLetMeDown() {
       { note: "B", octave: 2 },
     ],
     [
-      { note: "G", octave: 1 },
+      { note: "G", octave: 1, section: "Vocais (4x)" },
       { note: "C", octave: 1, index: 1 },
       { note: "E", octave: 1, index: 1 },
       { note: "G", octave: 2, obs: "Imagine all the" },

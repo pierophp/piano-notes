@@ -46,6 +46,7 @@ export type Note = {
     | "B";
   octave: number;
   index?: number;
+  section?: string;
   obs?: string;
 };
 
@@ -151,16 +152,21 @@ export function Keyboard({ notes }: { notes: Note[] }) {
   const octaves = getOctaves(notes);
 
   return (
-    <div className="relative">
-      <div className="flex">
-        {octaves.map((octave, index) => (
-          <Octave key={index} />
-        ))}
+    <>
+      {notes[0].section && (
+        <h2 className="text-xl font-bold w-full">{notes[0].section}</h2>
+      )}
+      <div className="relative">
+        <div className="flex">
+          {octaves.map((octave, index) => (
+            <Octave key={index} />
+          ))}
 
-        {notesWithTop.map((note, index) => (
-          <NoteLabel key={`${index}_${note.note}`} {...note} />
-        ))}
+          {notesWithTop.map((note, index) => (
+            <NoteLabel key={`${index}_${note.note}`} {...note} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
