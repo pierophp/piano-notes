@@ -79,8 +79,10 @@ function NoteLabel({ note, topIndex, octave, index, obs }: NoteLabelProps) {
     "bg-violet-400",
     "bg-green-500",
     "bg-red-400",
-    "bg-orange-600",
+    "bg-blue-400",
     "bg-lime-400",
+    "bg-fuchsia-400",
+    "bg-rose-400",
   ];
 
   const bgIndex = (index - 1) % bgs.length;

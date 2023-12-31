@@ -55,6 +55,20 @@ export default function DontLetMeDown() {
       { note: "A", octave: 1, index: 7 },
       { note: "D", octave: 3 },
     ],
+    [
+      { note: "G", octave: 1 },
+      { note: "B", octave: 1, index: 1 },
+      { note: "B", octave: 2, index: 1, obs: "Living for today" },
+      { note: "B", octave: 2 },
+      { note: "B", octave: 2 },
+      { note: "C", octave: 3 },
+      { note: "D", octave: 3 },
+      { note: "E", octave: 2 },
+      { note: "G", octave: 2 },
+      { note: "E", octave: 2 },
+      { note: "D", octave: 2 },
+      { note: "C", octave: 2 },
+    ],
   ];
 
   return (
