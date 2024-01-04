@@ -34,15 +34,21 @@ export type Note = {
   note:
     | "C"
     | "C#"
+    | "Db"
     | "D"
     | "D#"
+    | "Eb"
     | "E"
+    | "E#"
     | "F"
     | "F#"
+    | "Gb"
     | "G"
     | "G#"
+    | "Ab"
     | "A"
     | "A#"
+    | "Bb"
     | "B";
   octave: number;
   index?: number;
@@ -57,21 +63,32 @@ type NoteLabelProps = NoteCalculated & { index: number };
 const notesLeft = {
   C: 10,
   "C#": 28,
+  Db: 28,
   D: 46,
   "D#": 68,
+  Eb: 68,
   E: 88,
   F: 128,
+  "E#": 128,
   "F#": 149,
+  Gb: 149,
   G: 167,
   "G#": 189,
+  Ab: 189,
   A: 207,
   "A#": 228,
+  Bb: 228,
   B: 248,
 };
 
 function NoteLabel({ note, topIndex, octave, index, obs }: NoteLabelProps) {
   const left = notesLeft[note] + (octave - 1) * 280;
-  const calculatedTop = (note.includes("#") ? 20 : 132) + topIndex * 26;
+  const calculatedTop =
+    ((note.includes("#") && !["E#", "B#"].includes(note)) ||
+    (note.includes("b") && !["Cb", "Fb"].includes(note))
+      ? 20
+      : 132) +
+    topIndex * 26;
   const bgs = [
     "bg-amber-300",
     "bg-orange-400",

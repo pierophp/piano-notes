@@ -28,6 +28,13 @@ export default function Index() {
             </Link>
           </div>
         </div>
+
+        <div className="pt-2">
+          <h2 className="text-xl font-bold">Escalas</h2>
+          <div>
+            <Link href="/major-scales">Maiores</Link>
+          </div>
+        </div>
       </div>
     </div>
   );
