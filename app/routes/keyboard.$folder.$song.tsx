@@ -4,10 +4,12 @@ import { Keyboard, Song } from "~/components/Keyboard";
 import { Title } from "~/components/Title";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
+  const modules = import.meta.glob("../songs/keyboard/*/*.ts");
+
   const songPath =
     "../songs/keyboard/" + params.folder + "/" + params.song + ".ts";
 
-  const { song } = (await import(songPath)) as { song: Song };
+  const { song } = (await modules[songPath]()) as { song: Song };
 
   return json({ song });
 };
@@ -26,7 +28,7 @@ export default function KeyboardSong() {
     <div>
       <Title>{song.title}</Title>
 
-      <div className="p-2 flex gap-x-20 gap-y-5 flex-wrap">
+      <div className="py-6 px-2">
         {song.notes.map((notes, index) => (
           <Keyboard key={index} notes={notes} />
         ))}

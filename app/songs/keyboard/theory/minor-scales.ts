@@ -1,7 +1,7 @@
 import { Song } from "~/components/Keyboard";
 
 export const song: Song = {
-  title: "Minor Scales",
+  title: "Escalas Menores",
   notes: [
     [
       { note: "A", octave: 1, section: "Am" },
