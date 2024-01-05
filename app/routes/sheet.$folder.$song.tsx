@@ -45,7 +45,11 @@ export default function SheetSong() {
   const { abc, title, references } = useLoaderData<typeof loader>();
 
   useEffect(() => {
-    abcjs.renderAbc("abc", abc);
+    abcjs.renderAbc("abc", abc, {
+      format: {
+        vocalfont: "Verdana 10",
+      },
+    });
   }, [abc]);
 
   return (
