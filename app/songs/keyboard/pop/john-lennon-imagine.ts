@@ -1,15 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Keyboard, Note } from "~/components/Keyboard";
-import { Title } from "~/components/Title";
+import { Song } from "~/components/Keyboard";
 
-const title = "John Lennon - Imagine";
-
-export const meta: MetaFunction = () => {
-  return [{ title: title }, { name: "description", content: title }];
-};
-
-export default function DontLetMeDown() {
-  const notesGroups: Note[][] = [
+export const song: Song = {
+  title: "John Lennon - Imagine",
+  notes: [
     [
       { note: "G", octave: 1, section: "Intro (2x)" },
       { note: "E", octave: 1, index: 1 },
@@ -69,17 +62,5 @@ export default function DontLetMeDown() {
       { note: "D", octave: 2 },
       { note: "C", octave: 2 },
     ],
-  ];
-
-  return (
-    <div>
-      <Title>{title}</Title>
-
-      <div className="p-2 flex gap-x-20 gap-y-5 flex-wrap">
-        {notesGroups.map((notes, index) => (
-          <Keyboard key={index} notes={notes} />
-        ))}
-      </div>
-    </div>
-  );
-}
+  ],
+};

@@ -56,6 +56,11 @@ export type Note = {
   obs?: string;
 };
 
+export type Song = {
+  title: string;
+  notes: Note[][];
+};
+
 type NoteCalculated = Note & { index: number; topIndex: number };
 
 type NoteLabelProps = NoteCalculated & { index: number };

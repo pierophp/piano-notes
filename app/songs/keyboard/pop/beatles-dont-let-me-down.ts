@@ -1,15 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Keyboard, Note } from "~/components/Keyboard";
-import { Title } from "~/components/Title";
+import { Song } from "~/components/Keyboard";
 
-const title = "Beatles - Don't let me down";
-
-export const meta: MetaFunction = () => {
-  return [{ title: title }, { name: "description", content: title }];
-};
-
-export default function DontLetMeDown() {
-  const notesGroups: Note[][] = [
+export const song: Song = {
+  title: "Beatles - Don't let me down",
+  notes: [
     [
       { note: "G#", octave: 3, section: "Don't let me down (2x)" },
       { note: "F#", octave: 3 },
@@ -90,17 +83,5 @@ export default function DontLetMeDown() {
 
       { note: "E", octave: 1 },
     ],
-  ];
-
-  return (
-    <div>
-      <Title>{title}</Title>
-
-      <div className="p-2 flex gap-x-20 gap-y-5 flex-wrap">
-        {notesGroups.map((notes, index) => (
-          <Keyboard key={index} notes={notes} />
-        ))}
-      </div>
-    </div>
-  );
-}
+  ],
+};

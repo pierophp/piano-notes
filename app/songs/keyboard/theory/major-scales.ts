@@ -1,15 +1,8 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Keyboard, Note } from "~/components/Keyboard";
-import { Title } from "~/components/Title";
+import { Song } from "~/components/Keyboard";
 
-const title = "Escalas Maiores";
-
-export const meta: MetaFunction = () => {
-  return [{ title: title }, { name: "description", content: title }];
-};
-
-export default function MajorScales() {
-  const notesGroups: Note[][] = [
+export const song: Song = {
+  title: "Major Scales",
+  notes: [
     [
       { note: "C", octave: 1, section: "C" },
       { note: "D", octave: 1 },
@@ -150,17 +143,5 @@ export default function MajorScales() {
       { note: "F", octave: 2 }, // #E // F
       { note: "F#", octave: 2 }, // Gb
     ],
-  ];
-
-  return (
-    <div>
-      <Title>{title}</Title>
-
-      <div className="p-2 flex gap-x-20 gap-y-5 flex-wrap">
-        {notesGroups.map((notes, index) => (
-          <Keyboard key={index} notes={notes} />
-        ))}
-      </div>
-    </div>
-  );
-}
+  ],
+};

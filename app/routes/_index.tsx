@@ -12,18 +12,20 @@ export default function Index() {
       <div className="p-2 text-lg">
         <h2 className="text-xl font-bold">Simplificado</h2>
         <div>
-          <Link href="/beatles-dont-let-me-down">
+          <Link href="/keyboard/pop/beatles-dont-let-me-down">
             Beatles - Don't let me down
           </Link>
         </div>
         <div>
-          <Link href="/john-lennon-imagine">John Lennon - Imagine</Link>
+          <Link href="/keyboard/pop/john-lennon-imagine">
+            John Lennon - Imagine
+          </Link>
         </div>
 
         <div className="pt-2">
           <h2 className="text-xl font-bold">Partituras</h2>
           <div>
-            <Link href="/mario-bowser-castle-theme">
+            <Link href="/keyboard/games/mario-bowser-castle-theme">
               Mario - Bowser's Castle Theme
             </Link>
           </div>
@@ -32,10 +34,10 @@ export default function Index() {
         <div className="pt-2">
           <h2 className="text-xl font-bold">Escalas</h2>
           <div>
-            <Link href="/major-scales">Maiores</Link>
+            <Link href="/keyboard/theory/major-scales">Maiores</Link>
           </div>
           <div>
-            <Link href="/minor-scales">Menores</Link>
+            <Link href="/keyboard/theory/minor-scales">Menores</Link>
           </div>
         </div>
       </div>
