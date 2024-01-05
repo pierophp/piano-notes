@@ -59,6 +59,7 @@ export type Note = {
 export type Song = {
   title: string;
   notes: Note[][];
+  references?: { title: string; url: string }[];
 };
 
 type NoteCalculated = Note & { index: number; topIndex: number };

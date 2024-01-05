@@ -84,4 +84,10 @@ export const song: Song = {
       { note: "E", octave: 1 },
     ],
   ],
+  references: [
+    {
+      title: "Vídeo",
+      url: "https://youtu.be/TlRy1lSSNvE?si=3gNXgovRoxmBdyEv",
+    },
+  ],
 };

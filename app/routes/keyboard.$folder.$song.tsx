@@ -1,6 +1,7 @@
 import { json, LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { Keyboard, Song } from "~/components/Keyboard";
+import { Reference } from "~/components/Reference";
 import { Title } from "~/components/Title";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -33,6 +34,17 @@ export default function KeyboardSong() {
           <Keyboard key={index} notes={notes} />
         ))}
       </div>
+
+      {(song.references?.length ?? 0) > 0 && (
+        <div className="p-2">
+          <div className="font-bold">Referências:</div>
+          {song.references?.map((reference, index) => (
+            <div key={index}>
+              <Reference href={reference.url}>{reference.title}</Reference>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -25,8 +25,13 @@ export default function Index() {
         <div className="pt-2">
           <h2 className="text-xl font-bold">Partituras</h2>
           <div>
-            <Link href="/mario-bowser-castle-theme">
+            <Link href="/sheet/games/mario-bowser-castle-theme">
               Mario - Bowser's Castle Theme
+            </Link>
+          </div>
+          <div>
+            <Link href="/sheet/jw/children-david">
+              JW - Davi é um exemplo para os jovens
             </Link>
           </div>
         </div>
