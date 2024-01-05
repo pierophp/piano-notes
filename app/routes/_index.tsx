@@ -34,6 +34,9 @@ export default function Index() {
           <div>
             <Link href="/major-scales">Maiores</Link>
           </div>
+          <div>
+            <Link href="/minor-scales">Menores</Link>
+          </div>
         </div>
       </div>
     </div>

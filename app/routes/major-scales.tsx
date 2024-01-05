@@ -8,7 +8,7 @@ export const meta: MetaFunction = () => {
   return [{ title: title }, { name: "description", content: title }];
 };
 
-export default function DontLetMeDown() {
+export default function MajorScales() {
   const notesGroups: Note[][] = [
     [
       { note: "C", octave: 1, section: "C" },
