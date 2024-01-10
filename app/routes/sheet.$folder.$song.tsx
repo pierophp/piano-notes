@@ -48,7 +48,7 @@ export default function SheetSong() {
   useEffect(() => {
     abcjs.renderAbc("abc", abc, {
       add_classes: true,
-      scale: 2,
+      scale: 1.5,
       format: {
         vocalfont: "Verdana 10",
       },
