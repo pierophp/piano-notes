@@ -1,0 +1,47 @@
+.abcjs-note {
+  [data-name*="C"],
+  [data-name*="c"] {
+    fill: #2563eb;
+  }
+
+  [data-name*="D"],
+  [data-name*="d"] {
+    fill: #c084fc;
+  }
+
+  [data-name*="E"],
+  [data-name*="e"] {
+    fill: #0f766e;
+  }
+
+  [data-name*="F"],
+  [data-name*="f"] {
+    fill: #eab308;
+  }
+
+  [data-name*="G"],
+  [data-name*="g"] {
+    fill: #ea580c;
+  }
+
+  [data-name*="A"],
+  [data-name*="a"] {
+    fill: #06b6d4;
+  }
+
+  [data-name*="B"],
+  [data-name*="b"] {
+    fill: #d946ef;
+  }
+
+  [data-name="accidentals.nat"],
+  [data-name="accidentals.flat"],
+  [data-name="accidentals.sharp"],
+  [data-name="dots.dot"],
+  [data-name="flags.u8th"],
+  [data-name="ledger"],
+  .abcjs-chord,
+  text tspan {
+    fill: #000;
+  }
+}

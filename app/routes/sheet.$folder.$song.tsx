@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Title } from "~/components/Title";
 import abcjs from "abcjs";
 import { Reference } from "~/components/Reference";
+import "./sheet.folder.song.css";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const modules = import.meta.glob("../songs/abc/*/*.abc", { as: "raw" });
@@ -46,6 +47,8 @@ export default function SheetSong() {
 
   useEffect(() => {
     abcjs.renderAbc("abc", abc, {
+      add_classes: true,
+      scale: 2,
       format: {
         vocalfont: "Verdana 10",
       },
