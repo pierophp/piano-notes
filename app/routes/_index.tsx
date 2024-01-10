@@ -34,6 +34,19 @@ export default function Index() {
               JW - Davi é um exemplo para os jovens
             </Link>
           </div>
+          <div>
+            <Link href="/document/jw/12-apostolos">JW - 12 Apóstolos</Link>
+          </div>
+          <div>
+            <Link href="/document/jw/cantico-vitoria">
+              JW - Um cântico de vitória
+            </Link>
+          </div>
+          <div>
+            <Link href="/document/jw/procuramos-amigos-paz">
+              JW - Procuramos os amigos da paz
+            </Link>
+          </div>
         </div>
 
         <div className="pt-2">
