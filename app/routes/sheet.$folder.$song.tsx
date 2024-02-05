@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { Title } from "~/components/Title";
 import abcjs from "abcjs";
 import { Reference } from "~/components/Reference";
-import "./sheet.folder.song.css";
+import "../css/sheet.folder.song.css";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const modules = import.meta.glob("../songs/abc/*/*.abc", { as: "raw" });
