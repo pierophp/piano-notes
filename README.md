@@ -37,6 +37,4 @@ Make sure to deploy the output of `npm run build`
 
 ## Deploy
 
-```
-flyctl launch
-```
+Cloudflare Pages
